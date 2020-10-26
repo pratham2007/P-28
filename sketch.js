@@ -46,7 +46,7 @@ function mouseReleased(){
 }
 
 function draw() {
-  background(220);
+  background("lightblue");
 
   Engine.update(engine);
   
@@ -78,7 +78,7 @@ function draw() {
 
   textSize(20);
   fill(0);
-  text("Press space to get another chance", 30, 40);
+  text("Press 'space' to get another chance", 30, 40);
 }
 function keyPressed(){
   if(keyCode===32){
@@ -87,11 +87,10 @@ function keyPressed(){
   }
 }
 function detectCollision(a, b){
-  let d = dist(a.body.position.x, a.body.position.y, b.body.position.x, b.body.position.y);
+  var posA = a.body.position;
+  var posB = b.body.position;
+  let d = dist(posA.x, posA.y, posB.x, posB.y);
   if(d <= a.r + b.r){
     Matter.Body.setStatic(b.body, false);
   }
 }
-
-
-
