@@ -5,7 +5,7 @@ class Stone{
         }
         this.body = Bodies.circle(85, 500, 20, options);
         World.add(world, this.body);
-        this.image = loadImage("Plucking Mangoes/stone.png");
+        this.image = loadImage("stone.png");
     }
     display(){
         // this.body.position.x = mouseX;

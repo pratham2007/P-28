@@ -8,7 +8,7 @@ class Mango{
         this.body = Bodies.circle(posx, posy, radius-30, options);
         this.radius = radius;
         World.add(world, this.body);
-        this.image = loadImage("Plucking mangoes/mango.png");
+        this.image = loadImage("mango.png");
     }
     display(){
         var angle = this.body.angle;
