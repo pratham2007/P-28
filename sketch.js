@@ -52,7 +52,11 @@ function draw() {
   
   imageMode(CENTER);
   image(boyImg, 140, 575, 120, 220);
-  image(treeImg, 620, 420, 350, 500);
+
+  push();
+  translate(600, 400);
+  image(treeImg, 20, 20, 350, 500);
+  pop();
 
   ground.display();
   stone.display();
@@ -86,11 +90,12 @@ function keyPressed(){
     shot.attach();
   }
 }
+
 function detectCollision(a, b){
   var posA = a.body.position;
   var posB = b.body.position;
   let d = dist(posA.x, posA.y, posB.x, posB.y);
-  if(d <= a.r + b.r){
+  if(d <= 20 + 20){
     Matter.Body.setStatic(b.body, false);
   }
 }
